@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Blogs</title>
+{% endblock %}
+
+{% block content %}
+{% include 'messages.html' %}
+
+<!-- Blogs -->
+<div class="container">
+    <div>
+        <span>
+            {% if user.is_authenticated %}
+            Click <a href="{% url 'create_blog' %}">here</a> to create your own
+            blog
+            {% else %}
+            You need to <a href="{% url 'login' %}">login</a> to create your own
+            blog
+            {% endif %}
+        </span>
+    </div>
+    <div class="row">
+        {% for post in post_list %}
+        <div class="col-sm-4 d-flex">
+            <div class="card mt-4">
+                {% if post.image_src %}
+                <img class="card-img-top" src="{{ post.image_src}}"
+                    alt="Blog image">
+                {% endif %}
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text text-muted h6">{{ post.author }} | {{
+                        post.created_on}} </p>
+                    <p class="card-text">{{post.content|slice:":200" }}...</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'detail' post.slug  %}">Read More</a>
+                    <a href="{% url 'delete_post' post.id %}"
+                        class="btn btn-danger float-right">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
