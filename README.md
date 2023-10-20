@@ -3,7 +3,7 @@
 
 The goal of this project is to provide minimalistic django project template that everyone can use, which _just works_ out of the box and has the basic setup you can expand on.
 
-Template is written with django 1.11 and python 3 in mind.
+Template is written with django 4.2.6 and python 3 in mind.
 
 ![Default Home View](__screenshots/home.png?raw=true "Title")
 
@@ -62,10 +62,6 @@ And then:
 
 
 After that just install the local dependencies, run migrations, and start the server.
-
-{% endif %}
-
-# {{ project_name|title }}
 
 # Getting Started
 
