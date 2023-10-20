@@ -5,7 +5,7 @@ The goal of this project is to provide minimalistic django project template that
 
 Template is written with django 4.2.6 and python 3 in mind.
 
-![Default Home View](__screenshots/home.png?raw=true "Title")
+![Default Home View](__screenshots/home.jpg?raw=true "Title")
 
 ### Main features
 
